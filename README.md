@@ -1,2 +1,4 @@
 # PomoTimer_Unity_UIWidgets
 PomoTimer_Unity_UIWidgets
+
+VERSION
