@@ -15,9 +15,9 @@ namespace PomoTimerApp
                     //list类型删除
                     state.Tasks.Remove(removeTaskAction.Task);
                     return state;
-                case  CompleteTaskAction completeTaskAction:
+                case  UpdateTaskAction updateTaskAction:
                     //赋值
-                    completeTaskAction.Task.Done = true;
+                    updateTaskAction.Task.Done = true;
                     return state;
             }
                     

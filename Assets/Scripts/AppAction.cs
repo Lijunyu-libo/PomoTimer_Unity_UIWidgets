@@ -24,10 +24,10 @@ namespace PomoTimerApp
         public Task Task { get; }
     }
     
-    public class CompleteTaskAction
+    public class UpdateTaskAction
     {
         //构造函数，并注入Task类型参数
-        public CompleteTaskAction(Task task)
+        public UpdateTaskAction(Task task)
         {
 
             Task = task;

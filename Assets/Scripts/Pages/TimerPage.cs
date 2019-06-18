@@ -42,10 +42,21 @@ namespace PomoTimerApp
                 mTimer = Window.instance.periodic(duration: DELAY, () =>
                 {
                     var minutes = (int) mStopwatch.Elapsed.Minutes;
-                    if (minutes==25)
+                    //判断返回时间
+                    if (minutes==1)
                     {
                         Debug.Log("Times is up!");
-                        mStopwatch.Stop();
+                        //到时暂停并返回
+                        //mStopwatch.Stop();
+                        setState(() => mTimerText = "00:00");
+                        //是否能返回上一个页面
+                        if (Navigator.canPop(context))
+                        {
+                            widget.TaskData.pomoCount++;
+                            //返回上一个页面并带参数
+                            Navigator.pop(context, widget.TaskData);
+                        }
+                        
                         return;
                     }
                     Debug.LogFormat("Total Memory:{0:###,###,###,##0}bytes",GC.GetTotalMemory(true));

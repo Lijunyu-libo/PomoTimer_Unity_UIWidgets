@@ -92,8 +92,9 @@ namespace PomoTimerApp
                                                         },
                                                         onComplete: () =>
                                                         {
+                                                            taskData.Done = true;
                                                             //触发并传递值进去
-                                                            dispatcher.dispatch(new CompleteTaskAction(taskData));
+                                                            dispatcher.dispatch(new UpdateTaskAction(taskData));
 
                                                         }
                                                     ),
@@ -102,7 +103,15 @@ namespace PomoTimerApp
                                                         //跳转并传递参数到TimerPage页面
                                                         Navigator.of(context)
                                                             .push(new MaterialPageRoute(builder: (buildContext1 =>
-                                                                new TimerPage(taskData))));
+                                                                new TimerPage(taskData)))).Then(onResolved: result =>
+                                                            {
+                                                                var task = result as Task;
+                                                                if (task!=null)
+                                                                {
+                                                                    dispatcher.dispatch(new UpdateTaskAction(task));
+                                                                }
+
+                                                            });
 
                                                     }
                                                 );
