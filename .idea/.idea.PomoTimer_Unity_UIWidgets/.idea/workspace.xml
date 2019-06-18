@@ -97,32 +97,58 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pages/TimerPage.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+            <state relative-caret-position="398">
+              <caret line="152" column="51" lean-forward="true" selection-start-line="152" selection-start-column="51" selection-end-line="152" selection-end-column="51" />
               <folding>
-                <marker date="1560837839790" expanded="false" signature="6:278" ph="..." />
-                <marker date="1560837839790" expanded="true" signature="302:5982" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="348:698" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="501:566" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="615:688" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="747:5980" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="1097:3274" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="1264:3258" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="1398:2003" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="1496:1550" ph="/* 到时暂停并返回 ... */" />
-                <marker date="1560837839790" expanded="true" signature="1704:1924" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="2151:2981" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="2223:2278" ph="/* 每次初始化时实现时间更新 ... */" />
-                <marker date="1560837839790" expanded="true" signature="2342:2957" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="3006:3219" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="3092:3170" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="3318:3446" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="3510:5970" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="3638:5904" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="4874:4944" ph="/* child:new Text(&quot;START&quot;) ... */" />
-                <marker date="1560837839790" expanded="true" signature="5233:5759" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="5305:5465" ph="{...}" />
-                <marker date="1560837839790" expanded="true" signature="5514:5673" ph="{...}" />
+                <marker date="1560839846493" expanded="false" signature="6:311" ph="..." />
+                <marker date="1560839846493" expanded="true" signature="335:8540" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="381:731" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="534:599" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="648:721" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="780:8538" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="1130:3307" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="1297:3291" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="1431:2036" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="1529:1583" ph="/* 到时暂停并返回 ... */" />
+                <marker date="1560839846493" expanded="true" signature="1737:1957" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="2184:3014" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="2256:2311" ph="/* 每次初始化时实现时间更新 ... */" />
+                <marker date="1560839846493" expanded="true" signature="2375:2990" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="3039:3252" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="3125:3203" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="3351:3479" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="3543:8528" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="3817:8402" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="4173:6031" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="4433:5061" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="4503:4761" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="4810:4974" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="5324:5992" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="5398:5672" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="5725:5901" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="7372:7442" ph="/* child:new Text(&quot;START&quot;) ... */" />
+                <marker date="1560839846493" expanded="true" signature="7731:8257" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="7803:7963" ph="{...}" />
+                <marker date="1560839846493" expanded="true" signature="8012:8171" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Widgets/RoundButton.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="841">
+              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+              <folding>
+                <marker date="1560839714072" expanded="false" signature="6:128" ph="..." />
+                <marker date="1560839714072" expanded="true" signature="151:1453" ph="{...}" />
+                <marker date="1560839714072" expanded="true" signature="197:1451" ph="{...}" />
+                <marker date="1560839714072" expanded="true" signature="243:294" ph="{...}" />
+                <marker date="1560839714072" expanded="true" signature="406:469" ph="{...}" />
+                <marker date="1560839714072" expanded="true" signature="520:1445" ph="{...}" />
+                <marker date="1560839714072" expanded="true" signature="593:1435" ph="{...}" />
+                <marker date="1560839714072" expanded="true" signature="942:1143" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -140,6 +166,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pages/HomePage/TaskWidget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pages/TimerPage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Widgets/RoundButton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -147,6 +174,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AppAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AppReducer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pages/HomePage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Widgets/RoundButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pages/TimerPage.cs" />
       </list>
     </option>
@@ -255,12 +283,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560835384445</updated>
-      <workItem from="1560835396705" duration="2522000" />
+      <workItem from="1560835396705" duration="4447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2522000" />
+    <option name="totallyTimeSpent" value="4447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -574,34 +602,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Widgets/RoundButton.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding>
+            <marker date="1560839714072" expanded="false" signature="6:128" ph="..." />
+            <marker date="1560839714072" expanded="true" signature="151:1453" ph="{...}" />
+            <marker date="1560839714072" expanded="true" signature="197:1451" ph="{...}" />
+            <marker date="1560839714072" expanded="true" signature="243:294" ph="{...}" />
+            <marker date="1560839714072" expanded="true" signature="406:469" ph="{...}" />
+            <marker date="1560839714072" expanded="true" signature="520:1445" ph="{...}" />
+            <marker date="1560839714072" expanded="true" signature="593:1435" ph="{...}" />
+            <marker date="1560839714072" expanded="true" signature="942:1143" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pages/TimerPage.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+        <state relative-caret-position="398">
+          <caret line="152" column="51" lean-forward="true" selection-start-line="152" selection-start-column="51" selection-end-line="152" selection-end-column="51" />
           <folding>
-            <marker date="1560837839790" expanded="false" signature="6:278" ph="..." />
-            <marker date="1560837839790" expanded="true" signature="302:5982" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="348:698" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="501:566" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="615:688" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="747:5980" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="1097:3274" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="1264:3258" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="1398:2003" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="1496:1550" ph="/* 到时暂停并返回 ... */" />
-            <marker date="1560837839790" expanded="true" signature="1704:1924" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="2151:2981" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="2223:2278" ph="/* 每次初始化时实现时间更新 ... */" />
-            <marker date="1560837839790" expanded="true" signature="2342:2957" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="3006:3219" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="3092:3170" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="3318:3446" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="3510:5970" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="3638:5904" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="4874:4944" ph="/* child:new Text(&quot;START&quot;) ... */" />
-            <marker date="1560837839790" expanded="true" signature="5233:5759" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="5305:5465" ph="{...}" />
-            <marker date="1560837839790" expanded="true" signature="5514:5673" ph="{...}" />
+            <marker date="1560839846493" expanded="false" signature="6:311" ph="..." />
+            <marker date="1560839846493" expanded="true" signature="335:8540" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="381:731" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="534:599" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="648:721" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="780:8538" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="1130:3307" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="1297:3291" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="1431:2036" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="1529:1583" ph="/* 到时暂停并返回 ... */" />
+            <marker date="1560839846493" expanded="true" signature="1737:1957" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="2184:3014" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="2256:2311" ph="/* 每次初始化时实现时间更新 ... */" />
+            <marker date="1560839846493" expanded="true" signature="2375:2990" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="3039:3252" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="3125:3203" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="3351:3479" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="3543:8528" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="3817:8402" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="4173:6031" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="4433:5061" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="4503:4761" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="4810:4974" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="5324:5992" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="5398:5672" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="5725:5901" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="7372:7442" ph="/* child:new Text(&quot;START&quot;) ... */" />
+            <marker date="1560839846493" expanded="true" signature="7731:8257" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="7803:7963" ph="{...}" />
+            <marker date="1560839846493" expanded="true" signature="8012:8171" ph="{...}" />
           </folding>
         </state>
       </provider>

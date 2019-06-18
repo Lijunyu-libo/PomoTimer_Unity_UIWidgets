@@ -5,6 +5,7 @@ using System.Timers;
 using Unity.UIWidgets.engine;
 using Unity.UIWidgets.material;
 using Unity.UIWidgets.painting;
+using Unity.UIWidgets.rendering;
 using Unity.UIWidgets.ui;
 using Unity.UIWidgets.widgets;
 using Debug = UnityEngine.Debug;
@@ -98,30 +99,73 @@ namespace PomoTimerApp
             public override Widget build(BuildContext context)
             {
 
-                    return new Stack(
+                    return new Scaffold(
+                        backgroundColor:Colors.white,
+                        body:new Material(
+                            child: new Stack(
                         children:new List<Widget>
                         {
+                            new Padding(
+                                padding:EdgeInsets.only(left:4,top:10,right:4),
+                                child:new Row(
+                                    mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                                    children:new List<Widget>()
+                                    {
+                                        new IconButton(
+                                            icon:new Icon(Icons.arrow_back,color:Colors.redAccent,size:32),
+                                            onPressed:()=>
+                                        {
+                                            if (mTimerText!="00:00")
+                                            {
+                                                widget.TaskData.pomoCount++;
+                                                Navigator.pop(context, widget.TaskData);
+                                            }
+                                            else
+                                            {
+                                                Navigator.pop(context);
+                                            }
+                                            
+                                        }),
+                                        new IconButton(
+                                            icon:new Icon(Icons.done_all,color:Colors.redAccent,size:32),
+                                            onPressed:()=>
+                                            {
+                                                if (mTimerText!="00:00")
+                                                {
+                                                    widget.TaskData.Done = true;
+                                                    Navigator.pop(context, widget.TaskData);
+                                                }
+                                                else
+                                                {
+                                                    Navigator.pop(context);
+                                                }
+                                            
+                                            })
+                                    }
+                                )
+                                ),
                             new Align(
                                 alignment:Alignment.topCenter,
                                 child:new Container(
                                     margin:EdgeInsets.only(top:100),
                                     //获取数据
                                     child:new Text(widget.TaskData.Title,style:new TextStyle(
-                                        color:Colors.white,
-                                        fontSize:50.0f,
-                                        fontWeight:FontWeight.bold))
+                                        color:Colors.redAccent,
+                                        fontSize:32
+                                        //fontWeight:FontWeight.bold
+                                        ))
                                     )),
                             
                             new Align(
                                 alignment:Alignment.center,
                                 child:new Text(mTimerText,style:new TextStyle(
-                                    color:Colors.white,
+                                    color:Colors.redAccent,
                                     fontSize:66.0f,
                                     fontWeight:FontWeight.bold))),
                             new Align(
                                 alignment:Alignment.bottomCenter,
                                 child:new Container(
-                                    margin:EdgeInsets.only(bottom:100),
+                                    margin:EdgeInsets.only(bottom:200),
                                     //child:new Text("START")
                                     //添加点击事件
                                     child:new GestureDetector(
@@ -143,7 +187,9 @@ namespace PomoTimerApp
                                     
                                     )),
                         }
-                        
+                        )
+                            
+                            )
                         );
             }
         }

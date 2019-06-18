@@ -27,12 +27,12 @@ namespace PomoTimerApp
                     width:150,
                     height:150,
                     decoration:new BoxDecoration(
-                        color:Colors.white,
+                        color:Colors.redAccent,
                         borderRadius:BorderRadius.all(100),
                         boxShadow:new List<BoxShadow>()
                         {
                             new BoxShadow(
-                                color:Colors.white,
+                                color:Colors.grey,
                                 blurRadius:0f
                                 )
                         }
@@ -40,7 +40,7 @@ namespace PomoTimerApp
                     child:new Center(
                         child:new Text(
                             widget.buttonText,
-                            style:new TextStyle(color:Colors.black38,fontSize:30))
+                            style:new TextStyle(color:Colors.white,fontSize:30))
                     )
                     );
             }
