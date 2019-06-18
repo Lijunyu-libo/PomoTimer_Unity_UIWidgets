@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.UIWidgets.engine;
 using Unity.UIWidgets.material;
 using Unity.UIWidgets.painting;
@@ -23,6 +24,7 @@ namespace PomoTimerApp
             public override Widget build(BuildContext context)
             {
                 return new Scaffold(
+                    drawer:new MenuDrawer(),
                     //Redux部分获取数据
                     floatingActionButton:
                     new StoreConnector<AppState,AppState>(
@@ -61,7 +63,8 @@ namespace PomoTimerApp
                         child:new Center(
                             //通过Store Connector连接Redux，进行state,viewModels参数设置
                             child:new StoreConnector<AppState,List<Task>>(
-                                converter:state=>state.Tasks,
+                                //过滤，未完成taskData
+                                converter:state=>state.Tasks.Where(task=>!task.Done).ToList(),
                                 builder:((buildContext, model, dispatcher) =>
                                 {
                                     if (model.Count > 0)

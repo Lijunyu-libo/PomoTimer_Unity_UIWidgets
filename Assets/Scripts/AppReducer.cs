@@ -19,6 +19,13 @@ namespace PomoTimerApp
                     //赋值
                     updateTaskAction.Task.Done = true;
                     return state;
+                //页面选择赋值
+                case  ChangeToListAction _:
+                    state.pageMode = PageMode.List;
+                    return state;
+                case  ChangeToFinisedAction _:
+                    state.pageMode = PageMode.Finished;
+                    return state;
             }
                     
             return state;

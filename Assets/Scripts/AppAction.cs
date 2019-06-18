@@ -35,4 +35,16 @@ namespace PomoTimerApp
         
         public Task Task { get; }
     }
+    
+    public class ChangeToListAction
+    {
+        //构造函数
+        
+    }
+    
+    public class ChangeToFinisedAction
+    {
+        //构造函数
+        
+    }
 }
