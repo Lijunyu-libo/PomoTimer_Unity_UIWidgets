@@ -26,6 +26,16 @@ namespace PomoTimerApp
                 case  ChangeToFinisedAction _:
                     state.pageMode = PageMode.Finished;
                     return state;
+                case  ChangeToSettingAction _:
+                    state.pageMode = PageMode.Setting;
+                    return state;
+                //
+                case  ChangeThemeColorAction changeThemeColorAction:
+                    state.themeColor = changeThemeColorAction.color;
+                    return state;
+                case  ChangeTimerDurationAction changeTimerDurationAction:
+                    state.timerDuration = changeTimerDurationAction.min;
+                    return state;
             }
                     
             return state;

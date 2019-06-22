@@ -27,7 +27,7 @@ namespace PomoTimerApp
                     width:150,
                     height:150,
                     decoration:new BoxDecoration(
-                        color:Colors.redAccent,
+                        color:Theme.of(context).primaryColor,
                         borderRadius:BorderRadius.all(100),
                         boxShadow:new List<BoxShadow>()
                         {

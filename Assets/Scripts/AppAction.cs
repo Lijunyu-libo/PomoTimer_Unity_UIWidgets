@@ -1,3 +1,5 @@
+using Unity.UIWidgets.material;
+
 namespace PomoTimerApp
 {
     public class AddTaskAction
@@ -45,6 +47,33 @@ namespace PomoTimerApp
     public class ChangeToFinisedAction
     {
         //构造函数
+        
+    }
+    
+    public class ChangeToSettingAction
+    {
+        //构造函数
+        
+    }
+
+    public class ChangeThemeColorAction
+    {
+        public ThemeColors color { get; }
+
+        public ChangeThemeColorAction(ThemeColors color)
+        {
+            this.color = color;
+        }
+    }
+
+    public class ChangeTimerDurationAction
+    {
+        public int min { get; }
+
+        public ChangeTimerDurationAction(int min)
+        {
+            this.min = min;
+        }
         
     }
 }

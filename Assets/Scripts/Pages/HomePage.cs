@@ -24,123 +24,81 @@ namespace PomoTimerApp
             public override Widget build(BuildContext context)
             {
                 return new Scaffold(
-                    drawer:new MenuDrawer(),
+                    drawer: new MenuDrawer(),
                     //Redux部分获取数据
                     floatingActionButton:
-                    new StoreConnector<AppState,AppState>(
-                        converter:state=>state,
-                        builder:((buildContext1, model, dispatcher) =>
+                    new StoreConnector<AppState, AppState>(
+                        converter: state => state,
+                        builder: ((buildContext1, model, dispatcher) =>
                         {
-                            return new FloatingActionButton(
-                                child: new Icon(Icons.add),
-                                onPressed: () =>
-                                {
-                                    Navigator.push(
-                                        context,
-                                        new MaterialPageRoute(builder: buildContext => { return new NewTaskPage(); }
-                                        )).Then(result =>
+                            if (model.pageMode == PageMode.List )
+                            {
+                                return new FloatingActionButton(
+                                    child: new Icon(Icons.add),
+                                    onPressed: () =>
                                     {
-                                        //发送添加事件
-                                        var newTask = result as Task;
-                                        if (newTask != null)
+                                        Navigator.push(
+                                            context,
+                                            new MaterialPageRoute(builder: buildContext => { return new NewTaskPage(); }
+                                            )).Then(result =>
                                         {
-                                            //发送Action事件
-                                            dispatcher.dispatch(new AddTaskAction(newTask));
-                                        }
-                                    });
-                                }
-                            );
-                        })
-                        
-                    )
-                    
-                   ,
-                    appBar:new AppBar(
-                        title:new Text("HOME PAGE")
-                        ),
-                    body:new Container(
-                        
-                        child:new Center(
-                            //通过Store Connector连接Redux，进行state,viewModels参数设置
-                            child:new StoreConnector<AppState,List<Task>>(
-                                //过滤，未完成taskData
-                                converter:state=>state.Tasks.Where(task=>!task.Done).ToList(),
-                                builder:((buildContext, model, dispatcher) =>
-                                {
-                                    if (model.Count > 0)
-                                    {
-                                        //return new Text($"HAVE {model.Count} TASKS", style: new TextStyle(fontSize: 20));
-                                        return ListView.builder(
-                                            itemCount:model.Count,
-                                            itemBuilder:((context1, index) =>
+                                            //发送添加事件
+                                            var newTask = result as Task;
+                                            if (newTask != null)
                                             {
-                                                var taskData = model[index];
-//                                                return new ListTile(
-//                                                    title:new Text(taskData.Title),
-//                                                    trailing:new IconButton(icon:new Icon(Icons.delete,color:Theme.of(context).primaryColor,
-//                                                        size:32),onPressed:()=>
-//                                                        {
-//                                                            //触发Action并传入数据
-//                                                            dispatcher.dispatch(new RemoveTaskAction(taskData));
-//                                                        })
-//                                                    
-//                                                    );
-
-                                                //添加点击事件
-                                                return new InkWell(
-                                                    child: new TaskWidget(taskData, onRemove: () =>
-                                                        {
-                                                            //触发并传递值进去
-                                                            dispatcher.dispatch(new RemoveTaskAction(taskData));
-                                                        },
-                                                        onComplete: () =>
-                                                        {
-                                                            taskData.Done = true;
-                                                            //触发并传递值进去
-                                                            dispatcher.dispatch(new UpdateTaskAction(taskData));
-
-                                                        }
-                                                    ),
-                                                    onTap: () =>
-                                                    {
-                                                        //跳转并传递参数到TimerPage页面
-                                                        Navigator.of(context)
-                                                            .push(new MaterialPageRoute(builder: (buildContext1 =>
-                                                                new TimerPage(taskData)))).Then(onResolved: result =>
-                                                            {
-                                                                var task = result as Task;
-                                                                if (task!=null)
-                                                                {
-                                                                    dispatcher.dispatch(new UpdateTaskAction(task));
-                                                                }
-
-                                                            });
-
-                                                    }
-                                                );
-
-                                            })
-
-
-                                        );
-
+                                                //发送Action事件
+                                                dispatcher.dispatch(new AddTaskAction(newTask));
+                                            }
+                                        });
                                     }
-                                    else
-                                    {
-                                        return new Text("NO TASK NOW", style: new TextStyle(fontSize: 20));
-                                    }
-
-                                })
+                                );
                                 
-                                )
+                            }
+                            else
+                            {
+                                return null;
+                            }
                             
-                           
-                            ) 
-                        )
-                    );
-                    
-                    
-                
+                        })
+
+                    )
+
+                    ,
+                    appBar: new AppBar(
+                        //获取Pagemode
+                        title: new StoreConnector<AppState,PageMode>(
+                            converter:state=>state.pageMode,
+                            builder:((buildContext, model, dispatcher) =>
+                                {
+                                    //判断类型显示标题
+                                    //return new Text( model == PageMode.List?"TASK PAGE":"FINISH PAGE");
+                                    //静态扩展方式显示标题
+                                    return new Text(model.Titiled());
+                                }
+                            ))
+                    ),
+                    //获取值需要使用connector，配置state和ViewModel
+                    body: new StoreConnector<AppState, PageMode>(
+                        converter: state => state.pageMode,
+                        builder: (buildContext, model, dispatcher) =>
+                        {
+                            if (model == PageMode.List)
+                            {
+                                return new TaskListPage();
+                            }
+
+                            else if (model == PageMode.Finished)
+                            {
+                                return new FinishListPage();
+                            }
+                            else
+                            {
+                               return new SettingPage();
+                            }
+                            
+                        }
+                    ));
+
             }
         }
     }

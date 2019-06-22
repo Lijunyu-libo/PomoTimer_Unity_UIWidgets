@@ -73,7 +73,7 @@ namespace PomoTimerApp
                                             mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                             children:new List<Widget>()
                                             {
-                                                new IconButton(icon: new Icon(Icons.arrow_back,size:32,color:Colors.teal),
+                                                new IconButton(icon: new Icon(Icons.arrow_back,size:32,color:Theme.of(context).primaryColor),
                                                     onPressed: () =>
                                                     {
                                                         Navigator.pop(context);

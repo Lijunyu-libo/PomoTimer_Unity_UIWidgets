@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.UIWidgets.material;
 using Unity.UIWidgets.Redux;
 using Unity.UIWidgets.widgets;
+using UnityEngine;
 
 namespace PomoTimerApp
 {
@@ -21,7 +22,7 @@ namespace PomoTimerApp
                                 {
                                     new Container(
                                         height: 60,
-                                        color: Colors.teal
+                                        color: Theme.of(context).primaryColor
                                     ),
                                     new GestureDetector(
                                         child:new Container(
@@ -33,6 +34,7 @@ namespace PomoTimerApp
                                         ),
                                         onTap: () =>
                                         {
+                                            //Debug.Log(model.ToString());
                                             if (model==PageMode.List)
                                             {
                                                 
@@ -40,6 +42,7 @@ namespace PomoTimerApp
                                             else
                                             {
                                                 dispatcher.dispatch(new ChangeToListAction());
+                                                
                                             }
                                             
                                         }
@@ -56,6 +59,7 @@ namespace PomoTimerApp
                                         ),
                                         onTap: () =>
                                         {
+                                            //Debug.Log(model.ToString());
                                             if (model==PageMode.Finished)
                                             {
                                                 
@@ -63,6 +67,31 @@ namespace PomoTimerApp
                                             else
                                             {
                                                 dispatcher.dispatch(new ChangeToFinisedAction());
+                                                
+                                            }
+                                            
+                                        }
+                                        
+                                    ),
+                                    new GestureDetector(
+                                        child:new Container(
+                                            color:model == PageMode.Setting?Colors.grey[300]:Colors.white,
+                                            child:new ListTile(
+                                                leading: new Icon(Icons.settings),
+                                                title: new Text("SETTING")
+                                            )
+                                        ),
+                                        onTap: () =>
+                                        {
+                                            //Debug.Log(model.ToString());
+                                            if (model==PageMode.Setting)
+                                            {
+                                                
+                                            }
+                                            else
+                                            {
+                                                dispatcher.dispatch(new ChangeToSettingAction());
+                                                
                                             }
                                             
                                         }

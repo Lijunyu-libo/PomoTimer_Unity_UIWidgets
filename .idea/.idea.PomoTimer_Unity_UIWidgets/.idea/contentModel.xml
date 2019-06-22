@@ -16,16 +16,24 @@
           <e p="AppState.cs" t="Include" />
           <e p="Models.cs" t="Include" />
           <e p="Pages" t="Include">
+            <e p="FinishListPage.cs" t="Include" />
             <e p="HomePage" t="Include">
               <e p="TaskWidget.cs" t="Include" />
             </e>
             <e p="HomePage.cs" t="Include" />
             <e p="NewTaskPage.cs" t="Include" />
+            <e p="SettingPage.cs" t="Include" />
+            <e p="TaskListPage.cs" t="Include" />
+            <e p="TimerPage" t="Include">
+              <e p="WaveAnimation.cs" t="Include" />
+            </e>
             <e p="TimerPage.cs" t="Include" />
           </e>
           <e p="widgets" t="Include">
             <e p="MenuDrawer.cs" t="Include" />
             <e p="RoundButton.cs" t="Include" />
+            <e p="ThemeColorButton.cs" t="Include" />
+            <e p="TimerSlider.cs" t="Include" />
           </e>
         </e>
         <e p="UIWidgetsReduxPersist" t="Include">

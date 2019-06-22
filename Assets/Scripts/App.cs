@@ -34,12 +34,19 @@ namespace PomoTimerApp
             //Redux通过provider使用store
             return new StoreProvider<AppState>(
                 store:store,
-                child: new MaterialApp(
-                    theme: new ThemeData(
-                        primarySwatch: Colors.teal
-                    ),
-                    home: new HomePage()
-                ));
+                child:new StoreConnector<AppState,MaterialColor>(
+                    (context, model, dispatcher) => 
+                        new MaterialApp(
+                            theme: new ThemeData(
+                                //传入model值
+                            primarySwatch: model),
+                            home: new HomePage()),
+                    //转换操作
+                    converter:state=>state.themeColor.ToMaterialColor()
+                    
+                    
+                    )
+            );
         }
         
     }

@@ -28,7 +28,7 @@ namespace PomoTimerApp
                 child:new Card(
                     child:new ListTile(
                         leading: new IconButton(
-                            icon:new Icon(Icons.check_circle_outline,color:mTaskData.Done?Colors.black54:Colors.teal),
+                            icon:new Icon(Icons.check_circle_outline,color:mTaskData.Done?Colors.black54:Theme.of(context).primaryColor),
                             onPressed: () =>
                             {
                                 //触发完成
@@ -50,7 +50,7 @@ namespace PomoTimerApp
                                             {
                                                 new Text(mTaskData.Title,style:new TextStyle(color:Colors.black,fontSize:18)),
                                                 new Text(mTaskData.Description,style:new TextStyle(color:Colors.black45,fontSize:16)),
-                                                new Text($"{mTaskData.pomoCount} Pomodoro",style:new TextStyle(color:Colors.teal,fontSize:16))
+                                                new Text($"{mTaskData.pomoCount} Pomodoro",style:new TextStyle(color:Theme.of(context).primaryColor,fontSize:16))
                                                 
                                             }
                                             )

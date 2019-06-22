@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Timers;
+using Unity.UIWidgets.animation;
 using Unity.UIWidgets.engine;
 using Unity.UIWidgets.material;
 using Unity.UIWidgets.painting;
@@ -17,6 +18,7 @@ namespace PomoTimerApp
             //使得可获取
             public Task TaskData { get; }
             
+            public int timerDuration { get; }
             //抽象函数 可以引用
             public TimerPage(Task taskData)
             {
@@ -29,7 +31,7 @@ namespace PomoTimerApp
             }
         }
 
-        class TimerPageState : State<TimerPage>
+        class TimerPageState : SingleTickerProviderStateMixin<TimerPage>
         {
             public readonly static TimeSpan DELAY = TimeSpan.FromMilliseconds(100);
             private string mTimerText = "25:00";
@@ -39,7 +41,7 @@ namespace PomoTimerApp
             public override void initState()
             {
                 mStopwatch = new Stopwatch();
-                
+                mController = new AnimationController(duration:TimeSpan.FromMinutes(1),vsync:this);
                 mTimer = Window.instance.periodic(duration: DELAY, () =>
                 {
                     var minutes = (int) mStopwatch.Elapsed.Minutes;
@@ -92,27 +94,45 @@ namespace PomoTimerApp
             public override void dispose()
             {
                 base.dispose();
+                mController.dispose();
                 mStopwatch.Stop();
                 mTimer.cancel();
             }
 
+            private float mBegin = 50;
+            private AnimationController mController;
+            private Animation<float> mHeightSize;
             public override Widget build(BuildContext context)
-            {
-
+            { 
+                mHeightSize = new FloatTween(
+                    mBegin,
+                    MediaQuery.of(context).size.height-65).animate(
+                    new CurvedAnimation(mController,Curves.easeInOut));
+                var size = new Size(MediaQuery.of(context).size.width, mHeightSize.value * 0.9f);
                     return new Scaffold(
                         backgroundColor:Colors.white,
                         body:new Material(
                             child: new Stack(
                         children:new List<Widget>
                         {
-                            new Padding(
+                            new AnimatedBuilder(
+                                animation:mController,
+                                builder:((buildContext, child) =>
+                                {
+                                    return new WaveAnimation(size: size,
+                                        color: Theme.of(context).primaryColor);
+                                })
+                                ),
+                            
+                            new Container(
+                                alignment:Alignment.topCenter,
                                 padding:EdgeInsets.only(left:4,top:10,right:4),
                                 child:new Row(
                                     mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                     children:new List<Widget>()
                                     {
                                         new IconButton(
-                                            icon:new Icon(Icons.arrow_back,color:Colors.redAccent,size:32),
+                                            icon:new Icon(Icons.arrow_back,color:Theme.of(context).primaryColor,size:32),
                                             onPressed:()=>
                                         {
                                             if (mTimerText!="00:00")
@@ -127,7 +147,7 @@ namespace PomoTimerApp
                                             
                                         }),
                                         new IconButton(
-                                            icon:new Icon(Icons.done_all,color:Colors.redAccent,size:32),
+                                            icon:new Icon(Icons.done_all,color:Theme.of(context).primaryColor,size:32),
                                             onPressed:()=>
                                             {
                                                 if (mTimerText!="00:00")
@@ -150,7 +170,7 @@ namespace PomoTimerApp
                                     margin:EdgeInsets.only(top:100),
                                     //获取数据
                                     child:new Text(widget.TaskData.Title,style:new TextStyle(
-                                        color:Colors.redAccent,
+                                        color:Theme.of(context).primaryColor,
                                         fontSize:32
                                         //fontWeight:FontWeight.bold
                                         ))
@@ -159,13 +179,13 @@ namespace PomoTimerApp
                             new Align(
                                 alignment:Alignment.center,
                                 child:new Text(mTimerText,style:new TextStyle(
-                                    color:Colors.redAccent,
+                                    color:Theme.of(context).primaryColor,
                                     fontSize:66.0f,
                                     fontWeight:FontWeight.bold))),
                             new Align(
                                 alignment:Alignment.bottomCenter,
                                 child:new Container(
-                                    margin:EdgeInsets.only(bottom:200),
+                                    margin:EdgeInsets.only(bottom:100),
                                     //child:new Text("START")
                                     //添加点击事件
                                     child:new GestureDetector(
@@ -175,11 +195,15 @@ namespace PomoTimerApp
                                         {
                                             if (!mStopwatch.IsRunning)
                                             {
+                                                //时间控制
                                                 mStopwatch.Start();
+                                                //动画控制
+                                                mController.forward();
                                             }
                                             else
                                             {
                                                 mStopwatch.Stop();
+                                                mController.stop(false);
                                             }
                                            
                                         }
